@@ -19,6 +19,8 @@
 #include <SFML/Audio.h>
 #include <SFML/Config.h>
 
+#include "my.h"
+
 typedef struct {
     char help;
     char describe;
