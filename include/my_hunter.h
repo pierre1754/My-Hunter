@@ -8,20 +8,9 @@
 #ifndef SCREENSAVER_H
 #define SCREENSAVER_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <time.h>
-#include <unistd.h>
-#include <sys/queue.h>
-#include <SFML/Graphics.h>
-#include <SFML/Window.h>
-#include <SFML/System.h>
-#include <SFML/Audio.h>
-#include <SFML/Config.h>
-
 #include "my.h"
 
+#include "window.h"
 #include "asset.h"
 #include "object.h"
 
@@ -30,19 +19,15 @@ typedef struct {
     char describe;
 } opt_t;
 
-
-typedef struct {
-    sfRenderWindow *window;
-    sfVector2f window_size;
-} window_t;
-
-
 typedef struct {
     window_t *window;
     asset_t *asset;
-
-} egine_t;
+    object_t *object;
+} engine_t;
 
 int flag(int ac, char **av);
+
+engine_t *get_engine(void);
+
 
 #endif

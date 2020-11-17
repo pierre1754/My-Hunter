@@ -14,11 +14,6 @@
 #include <time.h>
 #include <unistd.h>
 #include <sys/queue.h>
-#include <SFML/Graphics.h>
-#include <SFML/Window.h>
-#include <SFML/System.h>
-#include <SFML/Audio.h>
-#include <SFML/Config.h>
 
 typedef struct {
     sfSprite *canon;

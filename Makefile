@@ -6,7 +6,7 @@
 ##
 
 SRC =	src/flags.c					\
-		src/create_engine.c			\
+		src/get_engine.c			\
 
 SRC_MAIN =	main.c					\
 

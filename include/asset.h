@@ -8,18 +8,6 @@
 #ifndef ASSET_H
 #define ASSET_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <time.h>
-#include <unistd.h>
-#include <sys/queue.h>
-#include <SFML/Graphics.h>
-#include <SFML/Window.h>
-#include <SFML/System.h>
-#include <SFML/Audio.h>
-#include <SFML/Config.h>
-
 typedef struct {
     sfTexture *plane_texture;
     sfIntRect rectangle_texture;

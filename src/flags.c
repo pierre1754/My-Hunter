@@ -35,8 +35,8 @@ int flag(int ac, char **av)
         write(0, "The hunt game can begin.\n", 25);
     }
     else if (options.help) {
-        write(0, "USAGES\n   ./my_hunter\n\n", 24);
-        write(0, "DECRIPTION\n   A duck hunt game, but better.\n", 48);
+        write(0, "USAGES\n   ./my_hunter\n\n", 23);
+        write(0, "DECRIPTION\n   A duck hunt game, but better.\n", 44);
         return 1;
     }
     return 0;
