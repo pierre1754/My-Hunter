@@ -1,11 +1,11 @@
 /*
 ** EPITECH PROJECT, 2020
-** my_find_prime_sup.c
+** my_hunter.c
 ** File description:
-** 02/10/2020
+** 17/11/2020
 */
 
-#include "screensaver.h"
+#include "my_hunter.h"
 
 int main(int argc, char **argv)
 {

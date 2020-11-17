@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2020
-** my_lib.c
+** my_hunter.c
 ** File description:
-** 06/10/2020
+** 17/11/2020
 */
 
 #ifndef SCREENSAVER_H
