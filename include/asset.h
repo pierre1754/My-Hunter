@@ -23,7 +23,6 @@ typedef struct {
     sfMusic *ambiance;
     plane_set_t **texture_array;
     sfSound **sound_array;
-    sound_type_t sounds;
 } asset_t;
 
 void create_asset(void);
