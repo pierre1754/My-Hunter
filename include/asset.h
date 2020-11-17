@@ -34,7 +34,8 @@ typedef enum {
 typedef struct {
     sfMusic *ambiance;
     plane_set_t **texture_array;
-    // SEE HERE
+    sfSound **sound_array;
+    sound_type_t sounds;
 } asset_t;
 
 #endif // ASSET_H
