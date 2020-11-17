@@ -15,12 +15,14 @@
 #include <SFML/Config.h>
 
 #define GET_WINDOW(engine) (engine->window->window)
+#define GET_WINDOW_SIZE(engine) (engine->window->window_size)
 
 typedef struct {
     sfRenderWindow *window;
     sfVector2f window_size;
 } window_t;
 
-
+void create_window(void);
+void destroy_window(void);
 
 #endif // WINDOW_H

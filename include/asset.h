@@ -26,4 +26,6 @@ typedef struct {
     sound_type_t sounds;
 } asset_t;
 
+void create_asset(void);
+
 #endif // ASSET_H

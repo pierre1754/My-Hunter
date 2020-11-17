@@ -6,7 +6,10 @@
 ##
 
 SRC =	src/flags.c					\
-		src/get_engine.c			\
+		src/set_engine.c			\
+		src/set_window.c			\
+		src/set_asset.c				\
+		src/set_object.c			\
 
 SRC_MAIN =	main.c					\
 

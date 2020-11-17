@@ -5,8 +5,8 @@
 ** 17/11/2020
 */
 
-#ifndef SCREENSAVER_H
-#define SCREENSAVER_H
+#ifndef MY_HUNTER_H
+#define MY_HUNTER_H
 
 #include "my.h"
 
@@ -26,8 +26,6 @@ typedef struct {
 } engine_t;
 
 int flag(int ac, char **av);
+void create_engine(void);
 
-engine_t *get_engine(void);
-
-
-#endif
+#endif // MY_HUNTER_H

@@ -39,4 +39,6 @@ typedef struct {
     LIST_HEAD(, plane_s) planes;
 } object_t;
 
+void create_object(void);
+
 #endif // OBJECT_H

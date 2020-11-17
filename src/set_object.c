@@ -7,14 +7,8 @@
 
 #include "my_hunter.h"
 
-static create_window()
-{
-
-}
-
-void create_engine(sfBool bool)
+void create_object(void)
 {
     engine_t *engine = get_engine();
-
 
 }
