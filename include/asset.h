@@ -13,6 +13,8 @@
 #define GET_ASSET_TEXTURE_CASE(engine, x) (engine->asset->texture_array[x]->plane_texture)
 #define GET_ASSET_TEXTURE_RECT(engine, x) (engine->asset->texture_array[x]->rectangle_texture)
 
+#define GET_ASSET_SOUND(engine, x) (engine->asset->sound_array[x])
+
 typedef struct {
     sfTexture *plane_texture;
     sfIntRect rectangle_texture;
@@ -20,7 +22,7 @@ typedef struct {
 
 typedef enum {
     soundHit,
-    soundshot,
+    soundShot,
     soundPlaneEngine,
 
     soundSize

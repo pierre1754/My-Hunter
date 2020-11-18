@@ -22,6 +22,24 @@ static void init_texture_array(void)
     GET_ASSET_TEXTURE_RECT(engine, 0) = (sfIntRect) {0, 0, 238, 101};
 }
 
+static void init_sound_array(void)
+{
+    engine_t *engine = get_engine();
+    sfSoundBuffer *buffer =
+    sfSoundBuffer_createFromFile("asset/explosion_sound.mp3");
+
+    sfSound_setBuffer(GET_ASSET_SOUND(engine, soundHit), buffer);
+    free(buffer);
+    buffer =
+    sfSoundBuffer_createFromFile("asset/shot_sound.mp3");
+    sfSound_setBuffer(GET_ASSET_SOUND(engine, soundShot), buffer);
+    free(buffer);
+    buffer =
+    sfSoundBuffer_createFromFile("asset/motor_sound.mp3");
+    sfSound_setBuffer(GET_ASSET_SOUND(engine, soundPlaneEngine), buffer);
+    free(buffer);
+}
+
 void create_asset(void)
 {
     engine_t *engine = get_engine();
@@ -30,4 +48,5 @@ void create_asset(void)
     GET_ASSET_AMBIANCE(engine) =
     sfMusic_createFromFile("asset/background_music.mp3");
     init_texture_array();
+    init_sound_array();
 }
