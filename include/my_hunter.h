@@ -26,6 +26,8 @@ typedef struct {
 } engine_t;
 
 int flag(int ac, char **av);
+
 void create_engine(void);
+void create_asset(void);
 
 #endif // MY_HUNTER_H

@@ -21,4 +21,5 @@ void create_engine(void)
     engine_t *engine = get_engine();
 
     create_window();
+    create_asset();
 }

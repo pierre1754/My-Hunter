@@ -9,13 +9,10 @@
 
 static void init_texture_array(void)
 {
-    int nbr_element = 1;
     engine_t *engine = get_engine();
 
-    engine->asset->texture_array = malloc(sizeof(plane_set_t *) *
-                                                (nbr_element + 1));
-    for (int i = 0; i < nbr_element; i++) {
-        engine->asset->texture_array[i] = malloc(sizeof(plane_set_t));
+    for (int i = 0; i < imageSize; i++) {
+        GET_ASSET_TEXTURE(engine, i) = malloc(sizeof(plane_set_t));
     }
     GET_ASSET_TEXTURE_CASE(engine, 0) =
     sfTexture_createFromFile("asset/plane_sprite_1_475_101.png", NULL);
@@ -29,15 +26,15 @@ static void init_sound_array(void)
     sfSoundBuffer_createFromFile("asset/explosion_sound.mp3");
 
     sfSound_setBuffer(GET_ASSET_SOUND(engine, soundHit), buffer);
-    free(buffer);
+    sfSoundBuffer_destroy(buffer);
     buffer =
     sfSoundBuffer_createFromFile("asset/shot_sound.mp3");
     sfSound_setBuffer(GET_ASSET_SOUND(engine, soundShot), buffer);
-    free(buffer);
+    sfSoundBuffer_destroy(buffer);
     buffer =
     sfSoundBuffer_createFromFile("asset/motor_sound.mp3");
     sfSound_setBuffer(GET_ASSET_SOUND(engine, soundPlaneEngine), buffer);
-    free(buffer);
+    sfSoundBuffer_destroy(buffer);
 }
 
 void create_asset(void)
@@ -49,4 +46,26 @@ void create_asset(void)
     sfMusic_createFromFile("asset/background_music.mp3");
     init_texture_array();
     init_sound_array();
+}
+
+static void destroy_texture_sound(void)
+{
+    engine_t *engine = get_engine();
+
+    for (int i = 0; i < imageSize; i++) {
+        sfTexture_destroy(GET_ASSET_TEXTURE_CASE(engine, i));
+        GET_ASSET_TEXTURE(engine, i) = malloc(sizeof(plane_set_t));
+    }
+    for (int i = 0; i < soundSize; i++) {
+        sfTexture_destroy(GET_ASSET_TEXTURE_CASE(engine, i));
+        GET_ASSET_TEXTURE(engine, i) = malloc(sizeof(plane_set_t));
+    }
+}
+
+void destroy_asset(void)
+{
+    engine_t *engine = get_engine();
+
+    sfMusic_destroy(GET_ASSET_AMBIANCE(engine));
+    destroy_texture_sound();
 }
