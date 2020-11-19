@@ -21,5 +21,6 @@ void start_engine(void)
                 sfRenderWindow_close(GET_WINDOW(engine));
             }
         }
+    draw_element();
     }
 }
