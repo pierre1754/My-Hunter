@@ -33,8 +33,10 @@ engine_t *get_engine(void);
 
 void create_engine(void);
 
+void init_origin_img(void);
+
 void get_mouse_pos(void);
-void draw_element();
+void draw_element(void);
 void start_engine(void);
 
 void destroy_engine(void);

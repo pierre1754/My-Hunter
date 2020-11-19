@@ -10,6 +10,7 @@
 int main(int argc, char **argv)
 {
     create_engine();
+    init_origin_img();
     start_engine();
     destroy_engine();
     return 0;

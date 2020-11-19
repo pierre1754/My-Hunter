@@ -10,6 +10,7 @@ SRC =	flags.c									\
 		src/draw_element.c						\
 		src/get_element.c						\
 		src/init_element.c						\
+		src/set_element.c						\
 		src/set_element/set_asset.c				\
 		src/set_element/set_engine.c			\
 		src/set_element/set_object.c			\

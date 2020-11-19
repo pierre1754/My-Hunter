@@ -7,7 +7,7 @@
 
 #include "my_hunter.h"
 
-void draw_element()
+void draw_element(void)
 {
     engine_t *engine = get_engine();
 
