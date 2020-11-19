@@ -10,6 +10,7 @@
 int main(int argc, char **argv)
 {
     create_engine();
+    start_engine();
     destroy_engine();
     return 0;
 }

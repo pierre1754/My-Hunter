@@ -11,8 +11,9 @@ SRC =	src/flags.c								\
 		src/set_element/set_object.c			\
 		src/set_element/set_window.c			\
 		src/set_element/destroy_engine.c		\
+		src/start_engine.c						\
 
-SRC_MAIN =	main.c					\
+SRC_MAIN =	main.c								\
 
 SRC_TEST =
 
