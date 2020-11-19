@@ -24,11 +24,3 @@ void create_engine(void)
     create_asset();
     create_object();
 }
-
-void destroy_engine(void)
-{
-    engine_t *engine = get_engine();
-
-    destroy_window();
-    destroy_asset();
-}

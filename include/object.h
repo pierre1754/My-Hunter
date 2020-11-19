@@ -68,5 +68,6 @@ typedef struct {
 } object_t;
 
 void create_object(void);
+void destroy_object(void);
 
 #endif // OBJECT_H
