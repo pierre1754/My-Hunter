@@ -21,6 +21,8 @@ void start_engine(void)
                 sfRenderWindow_close(GET_WINDOW(engine));
             }
         }
-    draw_element();
+        get_mouse_pos();
+        sfSprite_setPosition(GET_OBJ_ENV_AIM_IMG(engine), GET_MOUSE_POS(engine));
+        draw_element();
     }
 }

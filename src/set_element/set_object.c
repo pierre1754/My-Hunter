@@ -31,7 +31,7 @@ static void create_aim(void)
     sfSprite_setTexture(GET_OBJ_ENV_AIM_IMG(engine),
                         GET_OBJ_ENV_AIM_BUFF(engine),
                         sfTrue);
-
+    sfSprite_setScale(GET_OBJ_ENV_AIM_IMG(engine), (sfVector2f){0.3f, 0.3f});
 }
 
 static void create_canon(void)

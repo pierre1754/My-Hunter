@@ -15,5 +15,8 @@ void draw_element()
     sfRenderWindow_drawSprite(GET_WINDOW(engine),
                             GET_OBJ_ENV_BACKGROUND_IMG(engine),
                             NULL);
+    sfRenderWindow_drawSprite(GET_WINDOW(engine),
+                            GET_OBJ_ENV_AIM_IMG(engine),
+                            NULL);
     sfRenderWindow_display(GET_WINDOW(engine));
 }

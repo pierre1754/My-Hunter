@@ -32,6 +32,8 @@
 #define GET_OBJ_ENV_CANON_BUFF(engine) (engine->object->environement->canon->buff)
 #define GET_OBJ_ENV_CANON_IMG(engine) (engine->object->environement->canon->canon)
 
+#define GET_MOUSE_POS(engine) (engine->object->mouse_position)
+
 typedef struct {
     sfTexture *buff;
     sfSprite *background;
@@ -65,6 +67,7 @@ typedef struct plane_s {
 typedef struct {
     environement_t *environement;
     LIST_HEAD(, plane_s) planes;
+    sfVector2f mouse_position;
 } object_t;
 
 void create_object(void);

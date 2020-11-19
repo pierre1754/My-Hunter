@@ -23,4 +23,5 @@ void create_engine(void)
     create_window();
     create_asset();
     create_object();
+    engine->time = sfClock_create();
 }
