@@ -5,11 +5,11 @@
 ## Main Makefile
 ##
 
-SRC =	src/flags.c					\
-		src/set_asset.c				\
-		src/set_engine.c			\
-		src/set_object.c			\
-		src/set_window.c			\
+SRC =	src/flags.c								\
+		src/set_element/set_asset.c				\
+		src/set_element/set_engine.c			\
+		src/set_element/set_object.c			\
+		src/set_element/set_window.c			\
 
 SRC_MAIN =	main.c					\
 

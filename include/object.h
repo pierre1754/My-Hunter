@@ -15,14 +15,42 @@
 #include <unistd.h>
 #include <sys/queue.h>
 
+#define GET_OBJ_ENV(engine) (engine->object->environement)
+
+#define GET_OBJ_ENV_BACKGROUND(engine) (engine->object->environement->background)
+
+#define GET_OBJ_ENV_BACKGROUND_BUFF(engine) (engine->object->environement->background->buff)
+#define GET_OBJ_ENV_BACKGROUND_IMG(engine) (engine->object->environement->background->background)
+
+#define GET_OBJ_ENV_AIM(engine) (engine->object->environement->aim)
+
+#define GET_OBJ_ENV_AIM_BUFF(engine) (engine->object->environement->aim->buff)
+#define GET_OBJ_ENV_AIM_IMG(engine) (engine->object->environement->aim->aim)
+
+#define GET_OBJ_ENV_CANON(engine) (engine->object->environement->canon)
+
+#define GET_OBJ_ENV_CANON_BUFF(engine) (engine->object->environement->canon->buff)
+#define GET_OBJ_ENV_CANON_IMG(engine) (engine->object->environement->canon->canon)
+
 typedef struct {
+    sfTexture *buff;
+    sfSprite *background;
+} background_t;
+
+typedef struct {
+    sfTexture *buff;
+    sfSprite *aim;
+} aim_t;
+
+typedef struct {
+    sfTexture *buff;
     sfSprite *canon;
     sfVector2f deplacement;
 } canon_t;
 
 typedef struct {
-    sfSprite *background;
-    sfSprite *aim;
+    background_t *background;
+    aim_t *aim;
     canon_t *canon;
 } environement_t;
 
