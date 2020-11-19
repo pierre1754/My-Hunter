@@ -36,6 +36,7 @@ void create_engine(void);
 void init_origin_img(void);
 
 void get_mouse_pos(void);
+void set_image_pos(void);
 void draw_element(void);
 void start_engine(void);
 

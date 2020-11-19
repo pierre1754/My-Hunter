@@ -22,8 +22,7 @@ void start_engine(void)
             }
         }
         get_mouse_pos();
-
-        sfSprite_setPosition(GET_OBJ_ENV_AIM_IMG(engine), GET_MOUSE_POS(engine));
+        set_image_pos();
         draw_element();
     }
 }
