@@ -18,7 +18,7 @@ engine_t *get_engine(void)
 
 void create_engine(void)
 {
-    engine_t *engine = get_engine();
+    // engine_t *engine = get_engine();
 
     create_window();
     create_asset();
@@ -29,7 +29,5 @@ void destroy_engine(void)
     engine_t *engine = get_engine();
 
     destroy_window();
-    free(engine->window);
     destroy_asset();
-    free(engine->asset);
 }

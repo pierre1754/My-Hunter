@@ -23,18 +23,21 @@ static void init_sound_array(void)
 {
     engine_t *engine = get_engine();
 
+    for (int i = 0; i < soundSize; i++) {
+        GET_ASSET_SOUND(engine, i) = malloc(sizeof(sound_t));
+    }
     GET_ASSET_SOUND_BUFFER(engine, soundHit) =
-    sfSoundBuffer_createFromFile("asset/explosion_sound.mp3");
+    sfSoundBuffer_createFromFile("asset/explosion_sound.wav");
     GET_ASSET_SOUND_VAR(engine, soundHit) = sfSound_create();
     sfSound_setBuffer(GET_ASSET_SOUND_VAR(engine, soundHit),
                       GET_ASSET_SOUND_BUFFER(engine, soundHit));
     GET_ASSET_SOUND_BUFFER(engine, soundShot) =
-    sfSoundBuffer_createFromFile("asset/shot_sound.mp3");
+    sfSoundBuffer_createFromFile("asset/shot_sound.wav");
     GET_ASSET_SOUND_VAR(engine, soundShot) = sfSound_create();
     sfSound_setBuffer(GET_ASSET_SOUND_VAR(engine, soundShot),
                       GET_ASSET_SOUND_BUFFER(engine, soundShot));
     GET_ASSET_SOUND_BUFFER(engine, soundPlaneEngine) =
-    sfSoundBuffer_createFromFile("asset/motor_sound.mp3");
+    sfSoundBuffer_createFromFile("asset/motor_sound.wav");
     GET_ASSET_SOUND_VAR(engine, soundPlaneEngine) = sfSound_create();
     sfSound_setBuffer(GET_ASSET_SOUND_VAR(engine, soundPlaneEngine),
                       GET_ASSET_SOUND_BUFFER(engine, soundPlaneEngine));
@@ -46,7 +49,7 @@ void create_asset(void)
 
     engine->asset = malloc(sizeof(asset_t));
     GET_ASSET_AMBIANCE(engine) =
-    sfMusic_createFromFile("asset/background_music.mp3");
+    sfMusic_createFromFile("asset/background_music.wav");
     init_texture_array();
     init_sound_array();
 }
@@ -72,4 +75,5 @@ void destroy_asset(void)
 
     sfMusic_destroy(GET_ASSET_AMBIANCE(engine));
     destroy_texture_sound();
+    free(engine->asset);
 }

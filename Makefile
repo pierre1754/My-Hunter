@@ -6,10 +6,10 @@
 ##
 
 SRC =	src/flags.c					\
-		src/set_engine.c			\
-		src/set_window.c			\
 		src/set_asset.c				\
+		src/set_engine.c			\
 		src/set_object.c			\
+		src/set_window.c			\
 
 SRC_MAIN =	main.c					\
 
@@ -21,7 +21,7 @@ OBJ_MAIN =	$(SRC_MAIN)
 
 OBJ_TEST =	$(SRC_TEST:.c=.o)
 
-CFLAGS	=	-L lib/my -lmy -I include/
+CFLAGS	=	-L lib/my -lmy -I include -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm
 
 CFLAGS_TEST	=	--coverage -lcriterion
 
