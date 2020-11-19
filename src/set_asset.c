@@ -22,19 +22,22 @@ static void init_texture_array(void)
 static void init_sound_array(void)
 {
     engine_t *engine = get_engine();
-    sfSoundBuffer *buffer =
-    sfSoundBuffer_createFromFile("asset/explosion_sound.mp3");
 
-    sfSound_setBuffer(GET_ASSET_SOUND(engine, soundHit), buffer);
-    sfSoundBuffer_destroy(buffer);
-    buffer =
+    GET_ASSET_SOUND_BUFFER(engine, soundHit) =
+    sfSoundBuffer_createFromFile("asset/explosion_sound.mp3");
+    GET_ASSET_SOUND_VAR(engine, soundHit) = sfSound_create();
+    sfSound_setBuffer(GET_ASSET_SOUND_VAR(engine, soundHit),
+                      GET_ASSET_SOUND_BUFFER(engine, soundHit));
+    GET_ASSET_SOUND_BUFFER(engine, soundShot) =
     sfSoundBuffer_createFromFile("asset/shot_sound.mp3");
-    sfSound_setBuffer(GET_ASSET_SOUND(engine, soundShot), buffer);
-    sfSoundBuffer_destroy(buffer);
-    buffer =
+    GET_ASSET_SOUND_VAR(engine, soundShot) = sfSound_create();
+    sfSound_setBuffer(GET_ASSET_SOUND_VAR(engine, soundShot),
+                      GET_ASSET_SOUND_BUFFER(engine, soundShot));
+    GET_ASSET_SOUND_BUFFER(engine, soundPlaneEngine) =
     sfSoundBuffer_createFromFile("asset/motor_sound.mp3");
-    sfSound_setBuffer(GET_ASSET_SOUND(engine, soundPlaneEngine), buffer);
-    sfSoundBuffer_destroy(buffer);
+    GET_ASSET_SOUND_VAR(engine, soundPlaneEngine) = sfSound_create();
+    sfSound_setBuffer(GET_ASSET_SOUND_VAR(engine, soundPlaneEngine),
+                      GET_ASSET_SOUND_BUFFER(engine, soundPlaneEngine));
 }
 
 void create_asset(void)
@@ -54,11 +57,12 @@ static void destroy_texture_sound(void)
 
     for (int i = 0; i < imageSize; i++) {
         sfTexture_destroy(GET_ASSET_TEXTURE_CASE(engine, i));
-        GET_ASSET_TEXTURE(engine, i) = malloc(sizeof(plane_set_t));
+        free(GET_ASSET_TEXTURE(engine, i));
     }
     for (int i = 0; i < soundSize; i++) {
-        sfTexture_destroy(GET_ASSET_TEXTURE_CASE(engine, i));
-        GET_ASSET_TEXTURE(engine, i) = malloc(sizeof(plane_set_t));
+        sfSound_destroy(GET_ASSET_SOUND_VAR(engine, i));
+        sfSoundBuffer_destroy(GET_ASSET_SOUND_BUFFER(engine, i));
+        free(GET_ASSET_SOUND(engine, i));
     }
 }
 
