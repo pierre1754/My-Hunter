@@ -34,9 +34,16 @@ engine_t *get_engine(void);
 void create_engine(void);
 
 void init_origin_img(void);
+void init_music(void);
+void init_element(void);
 
 void get_mouse_pos(void);
+void get_event(void);
+void get_element(void);
+
 void set_image_pos(void);
+void set_element(void);
+
 void draw_element(void);
 void start_engine(void);
 

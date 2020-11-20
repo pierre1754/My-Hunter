@@ -15,14 +15,9 @@ void start_engine(void)
 
     while (sfRenderWindow_isOpen(GET_WINDOW(engine))) {
         while (sfRenderWindow_pollEvent(GET_WINDOW(engine), &engine->event)) {
-            if (engine->event.type == sfEvtClosed) {
-                sfRenderWindow_close(GET_WINDOW(engine));
-            } else if (engine->event.key.code == sfKeyEscape) {
-                sfRenderWindow_close(GET_WINDOW(engine));
-            }
+            get_element();
         }
-        get_mouse_pos();
-        set_image_pos();
+        set_element();
         draw_element();
     }
 }

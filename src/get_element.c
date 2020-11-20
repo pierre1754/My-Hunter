@@ -15,3 +15,22 @@ void get_mouse_pos(void)
     GET_MOUSE_POS(engine).x = (float) vector.x;
     GET_MOUSE_POS(engine).y = (float) vector.y;
 }
+
+void get_event(void)
+{
+    engine_t *engine = get_engine();
+
+    if (engine->event.type == sfEvtClosed ||
+        engine->event.key.code == sfKeyEscape) {
+        sfRenderWindow_close(GET_WINDOW(engine));
+    }
+    if (engine->event.type == sfEvtMouseButtonPressed) {
+        sfSound_play(GET_ASSET_SOUND_VAR(engine, soundShot));
+    }
+}
+
+void get_element(void)
+{
+    get_mouse_pos();
+    get_event();
+}
