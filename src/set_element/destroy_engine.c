@@ -20,6 +20,9 @@ static void destroy_environement(void)
     sfSprite_destroy(GET_OBJ_ENV_CANON_IMG(engine));
     sfTexture_destroy(GET_OBJ_ENV_CANON_BUFF(engine));
     free(GET_OBJ_ENV_CANON(engine));
+    sfSprite_destroy(GET_OBJ_ENV_BUTTON_IMG(engine));
+    sfTexture_destroy(GET_OBJ_ENV_BUTTON_BUFF(engine));
+    free(GET_OBJ_ENV_BUTTON(engine));
     free(GET_OBJ_ENV(engine));
 }
 
