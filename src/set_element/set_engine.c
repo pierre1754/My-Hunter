@@ -16,6 +16,14 @@ engine_t *get_engine(void)
     return engine;
 }
 
+// void create_time()
+{
+    engine_t *engine = get_engine();
+
+    engine->time = malloc(sizeof(time_elapsed_t));
+    GET_CLOCK(engine) = sfClock_create();
+}
+
 void create_engine(void)
 {
     engine_t *engine = get_engine();
@@ -23,5 +31,5 @@ void create_engine(void)
     create_window();
     create_asset();
     create_object();
-    engine->time = sfClock_create();
+    create_time();
 }

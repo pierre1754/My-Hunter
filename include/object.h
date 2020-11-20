@@ -47,7 +47,6 @@ typedef struct {
 typedef struct {
     sfTexture *buff;
     sfSprite *canon;
-    sfVector2f deplacement;
 } canon_t;
 
 typedef struct {

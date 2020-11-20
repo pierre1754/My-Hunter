@@ -7,15 +7,6 @@
 
 #include "my_hunter.h"
 
-void get_mouse_pos(void)
-{
-    engine_t *engine = get_engine();
-    sfVector2i vector = sfMouse_getPositionRenderWindow(GET_WINDOW(engine));
-
-    GET_MOUSE_POS(engine).x = (float) vector.x;
-    GET_MOUSE_POS(engine).y = (float) vector.y;
-}
-
 void get_event(void)
 {
     engine_t *engine = get_engine();
@@ -29,8 +20,23 @@ void get_event(void)
     }
 }
 
+void get_mouse_pos(void)
+{
+    engine_t *engine = get_engine();
+    sfVector2i vector = sfMouse_getPositionRenderWindow(GET_WINDOW(engine));
+
+    GET_MOUSE_POS(engine).x = (float) vector.x;
+    GET_MOUSE_POS(engine).y = (float) vector.y;
+}
+
+void get_time(void)
+{
+    engine_t *engine = get_engine();
+
+    GET_ELAPSED(engine) = sfTime_asSeconds(sfClock_restart(GET_CLOCK(engine)));
+}
+
 void get_element(void)
 {
     get_mouse_pos();
-    get_event();
 }

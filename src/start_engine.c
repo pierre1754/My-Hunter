@@ -15,8 +15,9 @@ void start_engine(void)
 
     while (sfRenderWindow_isOpen(GET_WINDOW(engine))) {
         while (sfRenderWindow_pollEvent(GET_WINDOW(engine), &engine->event)) {
-            get_element();
+            get_event();
         }
+        get_element();
         set_element();
         draw_element();
     }

@@ -17,6 +17,7 @@ void create_window(void)
                                                 "My Hunter",
                                                 sfFullscreen,
                                                 NULL);
+    sfRenderWindow_setVerticalSyncEnabled(GET_WINDOW(engine), sfTrue);
     GET_WINDOW_SIZE(engine) = (sfVector2f) {mode.width, mode.height};
 }
 
