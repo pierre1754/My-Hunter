@@ -7,6 +7,18 @@
 
 #include "my_hunter.h"
 
+static void is_finished(float *refresh_time, float *time_printable)
+{
+    engine_t *engine = get_engine();
+
+    if (*time_printable > 17) {
+        GET_OBJ_ENV_CANON_EXP_BOOL(engine) = 0;
+        GET_OBJ_ENV_CANON_REC(engine).left = 0;
+        *refresh_time = 0;
+        *time_printable = 0;
+    }
+}
+
 void draw_explosion(void)
 {
     engine_t *engine = get_engine();
@@ -15,21 +27,16 @@ void draw_explosion(void)
 
     refresh_time += GET_ELAPSED(engine);
     if (GET_OBJ_ENV_CANON_EXP_BOOL(engine)) {
-        if (refresh_time > 0.05) {
+        if (refresh_time > 0.01) {
             set_sprite_loop();
             refresh_time = 0;
-            time_printable ++;
+            time_printable++;
         }
         sfRenderWindow_drawSprite(GET_WINDOW(engine),
                                 GET_OBJ_ENV_CANON_EXP(engine),
                                 NULL);
     }
-    if (time_printable > 17) {
-        GET_OBJ_ENV_CANON_EXP_BOOL(engine) = 0;
-        GET_OBJ_ENV_CANON_REC(engine).left = 0;
-        refresh_time = 0;
-        time_printable = 0;
-    }
+    is_finished(&refresh_time, &time_printable);
 }
 
 void draw_sprite(void)
@@ -46,7 +53,6 @@ void draw_sprite(void)
                             GET_OBJ_ENV_CANON_IMG(engine),
                             NULL);
 }
-
 
 void draw_element(void)
 {
