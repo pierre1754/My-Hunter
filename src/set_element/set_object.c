@@ -54,6 +54,7 @@ static void create_canon(void)
     GET_OBJ_ENV_CANON_REC(engine) = (sfIntRect) {0, 0, 193, 205};
     sfSprite_setTextureRect(GET_OBJ_ENV_CANON_EXP(engine),
                             GET_OBJ_ENV_CANON_REC(engine));
+    GET_OBJ_ENV_CANON_EXP_BOOL(engine) = 0;
 }
 
 static void create_environement(void)
