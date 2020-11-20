@@ -34,6 +34,7 @@ static int pause_event(void)
                 sfRenderWindow_close(GET_WINDOW(engine));
                 return 1;
             }
+            else return 2;
         }
     }
     return 0;
@@ -46,9 +47,11 @@ int pause_game(void)
     if (engine->event.type == sfEvtKeyPressed) {
         draw_pause();
         while (engine->event.key.code != sfKeyEscape) {
-            if (pause_event()) {
+            if (pause_event() == 1) {
                 return 1;
             }
+            else if (pause_event() == 2)
+                return 0;
         }
     }
     return 0;

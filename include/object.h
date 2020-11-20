@@ -43,6 +43,8 @@
 
 #define GET_MOUSE_POS(engine) (engine->object->mouse_position)
 
+#define GET_OBJ_LISTHEAD(engine) (engine->object->planes)
+
 typedef struct {
     sfTexture *buff;
     sfSprite *background;
