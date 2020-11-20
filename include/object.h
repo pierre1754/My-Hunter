@@ -35,6 +35,7 @@
 #define GET_OBJ_ENV_CANON_REC(engine) (engine->object->environement->canon->rect)
 #define GET_OBJ_ENV_CANON_EXP(engine) (engine->object->environement->canon->explosion)
 #define GET_OBJ_ENV_CANON_EXP_BOOL(engine) (engine->object->environement->canon->is_draw)
+#define GET_CANON_TIME(engine) (engine->object->environement->canon->time_needed)
 
 #define GET_MOUSE_POS(engine) (engine->object->mouse_position)
 
@@ -55,6 +56,7 @@ typedef struct {
     sfSprite *explosion;
     sfIntRect rect;
     int is_draw;
+    float time_needed;
 } canon_t;
 
 typedef struct {

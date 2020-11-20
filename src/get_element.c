@@ -15,9 +15,11 @@ void get_event(void)
         engine->event.key.code == sfKeyEscape) {
         sfRenderWindow_close(GET_WINDOW(engine));
     }
-    if (engine->event.type == sfEvtMouseButtonPressed) {
+    if (engine->event.type == sfEvtMouseButtonPressed &&
+        GET_CANON_TIME(engine) > 1.5) {
         sfSound_play(GET_ASSET_SOUND_VAR(engine, soundShot));
         GET_OBJ_ENV_CANON_EXP_BOOL(engine) = 1;
+        GET_CANON_TIME(engine) = 0;
     }
 }
 

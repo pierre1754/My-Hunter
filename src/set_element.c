@@ -16,6 +16,7 @@ void set_image_pos(void)
     sfSprite_setPosition(GET_OBJ_ENV_AIM_IMG(engine), GET_MOUSE_POS(engine));
     sfSprite_setPosition(GET_OBJ_ENV_CANON_EXP(engine),
                         (sfVector2f) {GET_MOUSE_POS(engine).x, 797});
+    GET_CANON_TIME(engine) += (GET_ELAPSED(engine));
 }
 
 void set_sprite_loop(void)
