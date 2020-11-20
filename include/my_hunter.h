@@ -46,6 +46,8 @@ void init_origin_img(void);
 void init_music(void);
 void init_element(void);
 
+int pause_game(void);
+
 void get_mouse_pos(void);
 void get_event(void);
 void get_time(void);

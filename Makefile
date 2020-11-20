@@ -11,8 +11,10 @@ SRC =	flags.c									\
 		src/get_element.c						\
 		src/init_element.c						\
 		src/set_element.c						\
+		src/pause_game.c						\
 		src/set_element/set_asset.c				\
 		src/set_element/set_engine.c			\
+		src/set_element/set_environement.c		\
 		src/set_element/set_object.c			\
 		src/set_element/set_window.c			\
 		src/set_element/destroy_engine.c		\

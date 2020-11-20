@@ -32,6 +32,14 @@ void destroy_object(void)
     free(engine->object);
 }
 
+void destroy_time(void)
+{
+    engine_t *engine = get_engine();
+
+    sfClock_destroy(GET_CLOCK(engine));
+    free(engine->time);
+}
+
 void destroy_engine(void)
 {
     engine_t *engine = get_engine();
@@ -39,4 +47,5 @@ void destroy_engine(void)
     destroy_window();
     destroy_asset();
     destroy_object();
+    destroy_time();
 }

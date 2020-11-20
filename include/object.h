@@ -37,6 +37,10 @@
 #define GET_OBJ_ENV_CANON_EXP_BOOL(engine) (engine->object->environement->canon->is_draw)
 #define GET_CANON_TIME(engine) (engine->object->environement->canon->time_needed)
 
+#define GET_OBJ_ENV_BUTTON_BUFF(engine) (engine->object->environement->button->buff)
+#define GET_OBJ_ENV_BUTTON_IMG(engine) (engine->object->environement->button->button)
+#define GET_OBJ_ENV_BUTTON(engine) (engine->object->environement->button)
+
 #define GET_MOUSE_POS(engine) (engine->object->mouse_position)
 
 typedef struct {
@@ -60,9 +64,15 @@ typedef struct {
 } canon_t;
 
 typedef struct {
+    sfTexture *buff;
+    sfSprite *button;
+} quit_button_t;
+
+typedef struct {
     background_t *background;
     aim_t *aim;
     canon_t *canon;
+    quit_button_t *button;
 } environement_t;
 
 typedef struct plane_s {
@@ -79,6 +89,7 @@ typedef struct {
     sfVector2f mouse_position;
 } object_t;
 
+void create_environement(void);
 void create_object(void);
 
 void set_sprite_loop(void);
