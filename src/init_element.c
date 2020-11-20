@@ -13,6 +13,7 @@ void init_origin_img(void)
 
     sfSprite_setOrigin(GET_OBJ_ENV_AIM_IMG(engine), (sfVector2f) {256, 256});
     sfSprite_setOrigin(GET_OBJ_ENV_CANON_IMG(engine), (sfVector2f) {100, 0});
+    sfSprite_setOrigin(GET_OBJ_ENV_CANON_EXP(engine), (sfVector2f) {96, 102});
 }
 
 void init_music(void)

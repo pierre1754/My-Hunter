@@ -54,7 +54,10 @@ void get_element(void);
 void set_image_pos(void);
 void set_element(void);
 
+void draw_explosion(void);
+void draw_sprite(void);
 void draw_element(void);
+
 void start_engine(void);
 
 void destroy_engine(void);

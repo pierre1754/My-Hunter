@@ -30,6 +30,5 @@ void set_sprite_loop(void)
 
 void set_element(void)
 {
-    set_sprite_loop();
     set_image_pos();
 }

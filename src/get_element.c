@@ -17,6 +17,7 @@ void get_event(void)
     }
     if (engine->event.type == sfEvtMouseButtonPressed) {
         sfSound_play(GET_ASSET_SOUND_VAR(engine, soundShot));
+        GET_OBJ_ENV_CANON_EXP_BOOL(engine) = 1;
     }
 }
 
