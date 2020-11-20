@@ -16,7 +16,7 @@ engine_t *get_engine(void)
     return engine;
 }
 
-// void create_time()
+void create_time(void)
 {
     engine_t *engine = get_engine();
 

@@ -41,10 +41,19 @@ static void create_canon(void)
     GET_OBJ_ENV_CANON(engine) = malloc(sizeof(canon_t));
     GET_OBJ_ENV_CANON_BUFF(engine) =
     sfTexture_createFromFile("asset/canon.png", NULL);
+    GET_OBJ_ENV_CANON_BUFF_EXP(engine) =
+    sfTexture_createFromFile("asset/explosion_canon.png", NULL);
     GET_OBJ_ENV_CANON_IMG(engine) = sfSprite_create();
+    GET_OBJ_ENV_CANON_EXP(engine) = sfSprite_create();
     sfSprite_setTexture(GET_OBJ_ENV_CANON_IMG(engine),
                         GET_OBJ_ENV_CANON_BUFF(engine),
                         sfTrue);
+    sfSprite_setTexture(GET_OBJ_ENV_CANON_EXP(engine),
+                        GET_OBJ_ENV_CANON_BUFF_EXP(engine),
+                        sfTrue);
+    GET_OBJ_ENV_CANON_REC(engine) = (sfIntRect) {0, 0, 193, 205};
+    sfSprite_setTextureRect(GET_OBJ_ENV_CANON_EXP(engine),
+                            GET_OBJ_ENV_CANON_REC(engine));
 }
 
 static void create_environement(void)

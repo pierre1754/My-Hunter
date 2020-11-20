@@ -30,7 +30,10 @@
 #define GET_OBJ_ENV_CANON(engine) (engine->object->environement->canon)
 
 #define GET_OBJ_ENV_CANON_BUFF(engine) (engine->object->environement->canon->buff)
+#define GET_OBJ_ENV_CANON_BUFF_EXP(engine) (engine->object->environement->canon->buff_exp)
 #define GET_OBJ_ENV_CANON_IMG(engine) (engine->object->environement->canon->canon)
+#define GET_OBJ_ENV_CANON_REC(engine) (engine->object->environement->canon->rect)
+#define GET_OBJ_ENV_CANON_EXP(engine) (engine->object->environement->canon->explosion)
 
 #define GET_MOUSE_POS(engine) (engine->object->mouse_position)
 
@@ -46,7 +49,10 @@ typedef struct {
 
 typedef struct {
     sfTexture *buff;
+    sfTexture *buff_exp;
     sfSprite *canon;
+    sfSprite *explosion;
+    sfIntRect rect;
 } canon_t;
 
 typedef struct {

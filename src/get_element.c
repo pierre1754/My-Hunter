@@ -38,5 +38,6 @@ void get_time(void)
 
 void get_element(void)
 {
+    get_time();
     get_mouse_pos();
 }
