@@ -21,5 +21,8 @@ void draw_element(void)
     sfRenderWindow_drawSprite(GET_WINDOW(engine),
                             GET_OBJ_ENV_CANON_IMG(engine),
                             NULL);
+    sfRenderWindow_drawSprite(GET_WINDOW(engine),
+                            GET_OBJ_ENV_CANON_EXP(engine),
+                            NULL);
     sfRenderWindow_display(GET_WINDOW(engine));
 }

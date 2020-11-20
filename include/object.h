@@ -76,6 +76,9 @@ typedef struct {
 } object_t;
 
 void create_object(void);
+
+void set_sprite_loop();
+
 void destroy_object(void);
 
 #endif // OBJECT_H
