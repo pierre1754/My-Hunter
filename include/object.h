@@ -96,6 +96,9 @@ void create_environement(void);
 void create_object(void);
 
 void set_sprite_loop(void);
+void set_sprite_planes(void);
+
+void move_planes(void);
 
 void destroy_object(void);
 

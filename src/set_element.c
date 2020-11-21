@@ -29,6 +29,19 @@ void set_sprite_loop(void)
                             GET_OBJ_ENV_CANON_REC(engine));
 }
 
+void set_sprite_planes(void)
+{
+    engine_t *engine = get_engine();
+    plane_t *plane;
+
+    LIST_FOREACH(plane, GET_OBJ_LISTHEAD(engine), entries) {
+        plane->rectangle_texture.left =
+        (plane->rectangle_texture.left + 232) % 464;
+        sfSprite_setTextureRect(plane->plane,
+                                plane->rectangle_texture);
+    }
+}
+
 void set_element(void)
 {
     set_image_pos();

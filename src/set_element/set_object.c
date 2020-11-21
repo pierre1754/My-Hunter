@@ -17,9 +17,11 @@ plane_t *create_plane(void)
                         GET_ASSET_TEXTURE_CASE(engine, 0),
                         sfTrue);
     plane->rectangle_texture = GET_ASSET_TEXTURE_RECT(engine, 0);
-    plane->deplacement = (sfVector2f){rand() % 50, 0};
+    plane->deplacement = (sfVector2f){rand() % 10 + 5, 0};
     plane->position = (sfVector2f){0, 0};
     sfSprite_setPosition(plane->plane, plane->position);
+    sfSprite_setTextureRect(plane->plane,
+                                plane->rectangle_texture);
     return plane;
 }
 

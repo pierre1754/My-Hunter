@@ -55,8 +55,14 @@ void draw_planes(void)
 {
     engine_t *engine = get_engine();
     plane_t *plane;
+    static float refresh_time = 0;
 
+    refresh_time += GET_ELAPSED(engine);
     LIST_FOREACH(plane, GET_OBJ_LISTHEAD(engine), entries) {
+        if (refresh_time > 0.1) {
+            set_sprite_planes();
+            refresh_time = 0;
+        }
         sfRenderWindow_drawSprite(GET_WINDOW(engine), plane->plane, NULL);
     }
 }
@@ -68,7 +74,7 @@ void draw_element(void)
     sfRenderWindow_clear(GET_WINDOW(engine), sfBlack);
     draw_background();
     draw_planes();
-    draw_sprite();
     draw_explosion();
+    draw_sprite();
     sfRenderWindow_display(GET_WINDOW(engine));
 }

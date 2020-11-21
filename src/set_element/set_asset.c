@@ -15,8 +15,8 @@ static void init_texture_array(void)
         GET_ASSET_TEXTURE(engine, i) = malloc(sizeof(plane_set_t));
     }
     GET_ASSET_TEXTURE_CASE(engine, 0) =
-    sfTexture_createFromFile("asset/plane_sprite_1_475_101.png", NULL);
-    GET_ASSET_TEXTURE_RECT(engine, 0) = (sfIntRect) {0, 0, 238, 101};
+    sfTexture_createFromFile("asset/plane_1_464_102.png", NULL);
+    GET_ASSET_TEXTURE_RECT(engine, 0) = (sfIntRect) {0, 0, 232, 102};
 }
 
 static void init_sound_array(void)

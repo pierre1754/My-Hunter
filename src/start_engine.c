@@ -23,6 +23,7 @@ void start_engine(void)
         }
         get_element();
         set_element();
+        move_planes();
         draw_element();
     }
 }
