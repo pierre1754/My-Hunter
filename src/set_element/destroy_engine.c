@@ -31,7 +31,7 @@ void destroy_object(void)
     engine_t *engine = get_engine();
 
     destroy_environement();
-    // ADD DESTROY PLANE
+    // destroy_planes();
     free(engine->object);
 }
 
