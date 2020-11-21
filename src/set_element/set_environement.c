@@ -55,6 +55,7 @@ static void create_canon(void)
     sfSprite_setTextureRect(GET_OBJ_ENV_CANON_EXP(engine),
                             GET_OBJ_ENV_CANON_REC(engine));
     GET_OBJ_ENV_CANON_EXP_BOOL(engine) = 0;
+    GET_CANON_TIME(engine) = 0;
 }
 
 static void create_button(void)
