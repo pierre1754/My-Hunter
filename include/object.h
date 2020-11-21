@@ -45,6 +45,20 @@
 
 #define GET_OBJ_LISTHEAD(engine) (&engine->object->planes)
 
+#define LIST_FOREACH_SAFE(var, head, field, tvar)                       \
+        for ((var) = LIST_FIRST((head));                                \
+            (var) && ((tvar) = LIST_NEXT((var), field), 1);             \
+            (var) = (tvar))
+
+#define GET_EXP(engine) (engine->object->explosion)
+#define GET_EXP_IMG(engine) (engine->object->explosion->exp_img)
+#define GET_EXP_TEXTURE(engine) (engine->object->explosion->text_exp)
+#define GET_EXP_RECT(engine) (engine->object->explosion->rect_exp)
+#define GET_EXP_SOUND(engine) (engine->object->explosion->exp_sound)
+#define GET_EXP_BUFF(engine) (engine->object->explosion->buff_sound)
+#define GET_EXP_POS(engine) (engine->object->explosion->position)
+#define GET_EXP_BOOL(engine) (engine->object->explosion->bool)
+
 typedef struct {
     sfTexture *buff;
     sfSprite *background;
@@ -86,15 +100,29 @@ typedef struct plane_s {
 } plane_t;
 
 typedef struct {
+    sfSprite *exp_img;
+    sfTexture *text_exp;
+    sfIntRect rect_exp;
+    sfSound *exp_sound;
+    sfSoundBuffer *buff_sound;
+    sfVector2f position;
+    char bool;
+} explosion_t;
+
+typedef struct {
     environement_t *environement;
     LIST_HEAD(, plane_s) planes;
+    explosion_t *explosion;
     sfVector2f mouse_position;
 } object_t;
 
 plane_t *create_plane(void);
 void create_environement(void);
 void create_object(void);
+void create_explosion(void);
 
+void set_explosion(plane_t *plane);
+void set_sprite_explosion(void);
 void set_new_plane(void);
 void set_sprite_loop(void);
 void set_sprite_planes(void);

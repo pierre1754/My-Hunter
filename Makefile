@@ -15,10 +15,12 @@ SRC =	flags.c									\
 		src/pause_game.c						\
 		src/move_planes.c						\
 		src/destroy_plane.c						\
+		src/set_explosion.c						\
 		src/set_element/set_asset.c				\
 		src/set_element/set_engine.c			\
 		src/set_element/set_environement.c		\
 		src/set_element/set_object.c			\
+		src/set_element/set_explosion.c			\
 		src/set_element/set_window.c			\
 		src/set_element/destroy_engine.c		\
 

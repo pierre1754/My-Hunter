@@ -50,4 +50,5 @@ void create_object(void)
     engine->object = malloc(sizeof(object_t));
     create_environement();
     create_planes();
+    create_explosion();
 }

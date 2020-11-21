@@ -74,6 +74,7 @@ void draw_element(void)
     sfRenderWindow_clear(GET_WINDOW(engine), sfBlack);
     draw_background();
     draw_planes();
+    draw_plane_exp();
     draw_explosion();
     draw_sprite();
     sfRenderWindow_display(GET_WINDOW(engine));

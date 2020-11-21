@@ -61,6 +61,14 @@ void set_new_plane(void)
 
 void set_element(void)
 {
+    engine_t *engine = get_engine();
+    static float time_needed = 1;
+
+    time_needed += GET_ELAPSED(engine);
     set_new_plane();
+    if (time_needed > 0.2) {
+        set_sprite_explosion();
+        time_needed = 0;
+    }
     set_image_pos();
 }

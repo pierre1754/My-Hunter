@@ -62,6 +62,7 @@ void set_image_pos(void);
 void set_element(void);
 
 void draw_planes(void);
+void draw_plane_exp(void);
 void draw_explosion(void);
 void draw_background(void);
 void draw_sprite(void);
