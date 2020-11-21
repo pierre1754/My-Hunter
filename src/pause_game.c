@@ -29,8 +29,8 @@ static int pause_event(void)
                                             &engine->event)) {
         if (engine->event.type == sfEvtMouseButtonPressed) {
             pos_mouse = sfMouse_getPositionRenderWindow(GET_WINDOW(engine));
-            if ((pos_mouse.x >= 512 && pos_mouse.x <= 1408) &&
-                (pos_mouse.y >= 384 && pos_mouse.y <= 704)) {
+            if ((pos_mouse.x >= 792 && pos_mouse.x <= 1129) &&
+                (pos_mouse.y >= 435 && pos_mouse.y <= 644)) {
                 sfRenderWindow_close(GET_WINDOW(engine));
                 return 1;
             }

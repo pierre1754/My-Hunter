@@ -8,7 +8,7 @@
 SRC =	flags.c									\
 		src/start_engine.c						\
 		src/draw_element.c						\
-		src/draw_back_ground.c					\
+		src/draw_background.c					\
 		src/get_element.c						\
 		src/init_element.c						\
 		src/set_element.c						\
