@@ -40,19 +40,45 @@ static int pause_event(void)
     return 0;
 }
 
-int pause_game(void)
+static void set_pause(void)
 {
     engine_t *engine = get_engine();
 
+    draw_pause();
+    sfRenderWindow_setMouseCursorVisible(GET_WINDOW(engine), sfTrue);
+    sfMusic_pause(GET_ASSET_AMBIANCE(engine));
+}
+
+static int is_paused(void)
+{
+    engine_t *engine = get_engine();
+    int res_pause = pause_event();
+
+    if (res_pause != 0) {
+        sfMusic_play(GET_ASSET_AMBIANCE(engine));
+        sfRenderWindow_setMouseCursorVisible(GET_WINDOW(engine), sfFalse);
+        return res_pause;
+    }
+    return 0;
+}
+
+int pause_game(void)
+{
+    engine_t *engine = get_engine();
+    int res_is_paused = 0;
+
     if (engine->event.type == sfEvtKeyPressed) {
-        draw_pause();
-        while (engine->event.key.code != sfKeyEscape) {
-            if (pause_event() == 1) {
-                return 1;
-            }
-            else if (pause_event() == 2)
+        set_pause();
+        while (1) {
+            res_is_paused = is_paused();
+            if (res_is_paused == 1)
+                return res_is_paused;
+            else if (res_is_paused == 2)
                 return 0;
+            sfSleep(sfSeconds(0.016));
         }
+        sfMusic_play(GET_ASSET_AMBIANCE(engine));
+        sfRenderWindow_setMouseCursorVisible(GET_WINDOW(engine), sfFalse);
     }
     return 0;
 }

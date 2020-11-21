@@ -11,10 +11,6 @@ void get_event(void)
 {
     engine_t *engine = get_engine();
 
-    if (engine->event.type == sfEvtClosed ||
-        engine->event.key.code == sfKeyEscape) {
-        sfRenderWindow_close(GET_WINDOW(engine));
-    }
     if (engine->event.type == sfEvtMouseButtonPressed &&
         GET_CANON_TIME(engine) > 1.5) {
         sfSound_play(GET_ASSET_SOUND_VAR(engine, soundShot));

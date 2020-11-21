@@ -18,6 +18,7 @@ void start_engine(void)
             get_event();
             if (pause_game()) {
                 sfRenderWindow_close(GET_WINDOW(engine));
+                break;
             }
         }
         get_element();

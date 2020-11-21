@@ -18,6 +18,13 @@ void init_origin_img(void)
     sfSprite_scale(GET_OBJ_ENV_BUTTON_IMG(engine), (sfVector2f) {0.5f, 0.5f});
 }
 
+void init_cursor(void)
+{
+    engine_t *engine = get_engine();
+
+    sfRenderWindow_setMouseCursorVisible(GET_WINDOW(engine), sfFalse);
+}
+
 void init_music(void)
 {
     engine_t *engine = get_engine();
@@ -29,5 +36,6 @@ void init_music(void)
 void init_element(void)
 {
     init_origin_img();
+    init_cursor();
     init_music();
 }

@@ -43,6 +43,7 @@ void create_time();
 void create_engine(void);
 
 void init_origin_img(void);
+void init_cursor(void);
 void init_music(void);
 void init_element(void);
 
