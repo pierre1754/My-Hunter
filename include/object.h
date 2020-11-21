@@ -131,6 +131,8 @@ void move_planes(void);
 
 void check_plane(void);
 void destroy_plane(plane_t *plane);
+void destroy_explosion(void);
+void destroy_planes(void);
 void destroy_object(void);
 
 #endif // OBJECT_H

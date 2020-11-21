@@ -23,6 +23,7 @@ SRC =	flags.c									\
 		src/set_element/set_explosion.c			\
 		src/set_element/set_window.c			\
 		src/set_element/destroy_engine.c		\
+		src/set_element/destroy_object.c		\
 
 SRC_MAIN =	main.c								\
 
