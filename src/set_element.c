@@ -42,7 +42,25 @@ void set_sprite_planes(void)
     }
 }
 
+void set_new_plane(void)
+{
+    engine_t *engine = get_engine();
+    plane_t *plane;
+    int rand_nbr = rand() % 100;
+    static float time_needed = 0;
+
+    time_needed += GET_ELAPSED(engine);
+    if (time_needed < 0.5)
+        return;
+    time_needed = 0;
+    if (rand_nbr > 25)
+        return;
+    plane = create_plane();
+    LIST_INSERT_HEAD(GET_OBJ_LISTHEAD(engine), plane, entries);
+}
+
 void set_element(void)
 {
+    set_new_plane();
     set_image_pos();
 }

@@ -9,7 +9,6 @@
 
 static void set_vector_planes(plane_t *plane)
 {
-    engine_t *engine = get_engine();
     int rand_nbr = rand() % 100;
     int sign_1 = 1;
 

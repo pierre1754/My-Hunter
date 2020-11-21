@@ -95,6 +95,7 @@ plane_t *create_plane(void);
 void create_environement(void);
 void create_object(void);
 
+void set_new_plane(void);
 void set_sprite_loop(void);
 void set_sprite_planes(void);
 
