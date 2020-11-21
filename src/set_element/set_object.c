@@ -7,12 +7,28 @@
 
 #include "my_hunter.h"
 
-// void create_planes(void)
-// {
-//     engine_t *engine = get_engine();
+plane_t *create_plane(void)
+{
+    engine_t *engine = get_engine();
+    plane_t *plane = malloc(sizeof(plane_t));
 
-//     GET_OBJ_LISTHEAD(engine) = LIST_HEAD_INITIALIZER(planes);
-// }
+    plane->plane = sfSprite_create();
+    sfSprite_setTexture(plane->plane,
+                        GET_ASSET_TEXTURE_CASE(engine, 0),
+                        sfTrue);
+    plane->rectangle_texture = GET_ASSET_TEXTURE_RECT(engine, 0);
+    plane->deplacement = (sfVector2f){rand() % 50, 0};
+    plane->position = (sfVector2f){0, 0};
+    sfSprite_setPosition(plane->plane, plane->position);
+    return plane;
+}
+
+static void create_planes(void)
+{
+    engine_t *engine = get_engine();
+
+    LIST_INIT(GET_OBJ_LISTHEAD(engine));
+}
 
 void create_object(void)
 {
@@ -20,5 +36,5 @@ void create_object(void)
 
     engine->object = malloc(sizeof(object_t));
     create_environement();
-    // create_planes();
+    create_planes();
 }

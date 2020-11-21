@@ -9,6 +9,7 @@
 
 int main(int argc, char **argv)
 {
+    srand(time(NULL));
     create_engine();
     init_element();
     start_engine();

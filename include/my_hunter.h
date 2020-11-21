@@ -42,6 +42,7 @@ engine_t *get_engine(void);
 void create_time();
 void create_engine(void);
 
+void init_plane(void);
 void init_origin_img(void);
 void init_cursor(void);
 void init_music(void);
@@ -57,6 +58,7 @@ void get_element(void);
 void set_image_pos(void);
 void set_element(void);
 
+void draw_planes(void);
 void draw_explosion(void);
 void draw_sprite(void);
 void draw_element(void);

@@ -54,12 +54,23 @@ void draw_sprite(void)
                             NULL);
 }
 
+void draw_planes(void)
+{
+    engine_t *engine = get_engine();
+    plane_t *plane;
+
+    LIST_FOREACH(plane, GET_OBJ_LISTHEAD(engine), entries) {
+        sfRenderWindow_drawSprite(GET_WINDOW(engine), plane->plane, NULL);
+    }
+}
+
 void draw_element(void)
 {
     engine_t *engine = get_engine();
 
     sfRenderWindow_clear(GET_WINDOW(engine), sfBlack);
     draw_sprite();
+    draw_planes();
     draw_explosion();
     sfRenderWindow_display(GET_WINDOW(engine));
 }

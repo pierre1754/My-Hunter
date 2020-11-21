@@ -43,7 +43,7 @@
 
 #define GET_MOUSE_POS(engine) (engine->object->mouse_position)
 
-#define GET_OBJ_LISTHEAD(engine) (engine->object->planes)
+#define GET_OBJ_LISTHEAD(engine) (&engine->object->planes)
 
 typedef struct {
     sfTexture *buff;
@@ -91,6 +91,7 @@ typedef struct {
     sfVector2f mouse_position;
 } object_t;
 
+plane_t *create_plane(void);
 void create_environement(void);
 void create_object(void);
 

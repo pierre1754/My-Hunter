@@ -33,9 +33,18 @@ void init_music(void)
     sfMusic_setLoop(GET_ASSET_AMBIANCE(engine), sfTrue);
 }
 
+void init_plane(void)
+{
+    engine_t *engine = get_engine();
+    plane_t *plane = create_plane();
+
+    LIST_INSERT_HEAD(GET_OBJ_LISTHEAD(engine), plane, entries);
+}
+
 void init_element(void)
 {
     init_origin_img();
     init_cursor();
     init_music();
+    init_plane();
 }
