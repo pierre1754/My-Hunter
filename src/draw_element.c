@@ -44,9 +44,6 @@ void draw_sprite(void)
     engine_t *engine = get_engine();
 
     sfRenderWindow_drawSprite(GET_WINDOW(engine),
-                            GET_OBJ_ENV_BACKGROUND_IMG(engine),
-                            NULL);
-    sfRenderWindow_drawSprite(GET_WINDOW(engine),
                             GET_OBJ_ENV_AIM_IMG(engine),
                             NULL);
     sfRenderWindow_drawSprite(GET_WINDOW(engine),
@@ -69,8 +66,9 @@ void draw_element(void)
     engine_t *engine = get_engine();
 
     sfRenderWindow_clear(GET_WINDOW(engine), sfBlack);
-    draw_sprite();
+    draw_background();
     draw_planes();
+    draw_sprite();
     draw_explosion();
     sfRenderWindow_display(GET_WINDOW(engine));
 }

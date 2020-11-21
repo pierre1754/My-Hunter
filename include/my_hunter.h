@@ -60,6 +60,7 @@ void set_element(void);
 
 void draw_planes(void);
 void draw_explosion(void);
+void draw_background(void);
 void draw_sprite(void);
 void draw_element(void);
 
