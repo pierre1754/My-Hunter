@@ -7,7 +7,7 @@
 
 #include "my_hunter.h"
 
-int main()
+int main(int argc, char **argv)
 {
     srand(time(NULL));
     create_engine();

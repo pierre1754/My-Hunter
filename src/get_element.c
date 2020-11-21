@@ -18,7 +18,8 @@ void get_event(void)
         sfSound_play(GET_ASSET_SOUND_VAR(engine, soundShot));
         GET_OBJ_ENV_CANON_EXP_BOOL(engine) = 1;
         GET_CANON_TIME(engine) = 0;
-        LIST_FOREACH_SAFE(plane, GET_OBJ_LISTHEAD(engine), entries, temp_plane) {
+        LIST_FOREACH_SAFE(plane,
+                            GET_OBJ_LISTHEAD(engine), entries, temp_plane) {
             if (CHECK_POS_X(engine, plane) && CHECK_POS_Y(engine, plane)) {
                 set_explosion(plane);
                 destroy_plane(plane);

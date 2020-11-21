@@ -31,7 +31,7 @@ void destroy_planes(void)
     engine_t *engine = get_engine();
     plane_t *plane;
 
-    while(!LIST_EMPTY(GET_OBJ_LISTHEAD(engine))) {
+    while (!LIST_EMPTY(GET_OBJ_LISTHEAD(engine))) {
         plane = LIST_FIRST(GET_OBJ_LISTHEAD(engine));
         LIST_REMOVE(plane, entries);
         sfSprite_destroy(plane->plane);
