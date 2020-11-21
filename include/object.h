@@ -101,6 +101,8 @@ void set_sprite_planes(void);
 
 void move_planes(void);
 
+void check_plane(void);
+void destroy_plane(plane_t *plane);
 void destroy_object(void);
 
 #endif // OBJECT_H

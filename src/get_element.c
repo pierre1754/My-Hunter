@@ -10,12 +10,17 @@
 void get_event(void)
 {
     engine_t *engine = get_engine();
+    plane_t *plane;
 
     if (engine->event.type == sfEvtMouseButtonPressed &&
         GET_CANON_TIME(engine) > 1.5) {
         sfSound_play(GET_ASSET_SOUND_VAR(engine, soundShot));
         GET_OBJ_ENV_CANON_EXP_BOOL(engine) = 1;
         GET_CANON_TIME(engine) = 0;
+        LIST_FOREACH(plane, GET_OBJ_LISTHEAD(engine), entries) {
+            if (CHECK_POS_X(engine, plane) && CHECK_POS_Y(engine, plane))
+                destroy_plane(plane);
+        }
     }
 }
 
@@ -37,6 +42,7 @@ void get_time(void)
 
 void get_element(void)
 {
+
     get_time();
     get_mouse_pos();
 }

@@ -7,14 +7,19 @@
 
 #include "my_hunter.h"
 
-void move_planes(void)
+void destroy_plane(plane_t *plane)
+{
+    sfSprite_destroy(plane->plane);
+    LIST_REMOVE(plane, entries);
+}
+
+void check_plane(void)
 {
     engine_t *engine = get_engine();
     plane_t *plane;
 
     LIST_FOREACH(plane, GET_OBJ_LISTHEAD(engine), entries) {
-        sfSprite_move(plane->plane, plane->deplacement);
-        plane->position = sfSprite_getPosition(plane->plane);
+        if (plane->position.x > 1920)
+            destroy_plane(plane);
     }
-    check_plane();
 }

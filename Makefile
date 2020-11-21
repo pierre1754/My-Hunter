@@ -14,6 +14,7 @@ SRC =	flags.c									\
 		src/set_element.c						\
 		src/pause_game.c						\
 		src/move_planes.c						\
+		src/destroy_plane.c						\
 		src/set_element/set_asset.c				\
 		src/set_element/set_engine.c			\
 		src/set_element/set_environement.c		\
