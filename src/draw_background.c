@@ -23,6 +23,6 @@ void draw_plane_exp(void)
     if (!GET_EXP_BOOL(engine))
         return;
     sfRenderWindow_drawSprite(GET_WINDOW(engine), GET_EXP_IMG(engine), NULL);
-    if (GET_EXP_BOOL(engine) > 5)
+    if (GET_EXP_BOOL(engine) > 4)
         GET_EXP_BOOL(engine) = 0;
 }
