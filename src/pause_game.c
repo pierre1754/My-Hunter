@@ -57,6 +57,7 @@ static int is_paused(void)
     if (res_pause != 0) {
         sfMusic_play(GET_ASSET_AMBIANCE(engine));
         sfRenderWindow_setMouseCursorVisible(GET_WINDOW(engine), sfFalse);
+        sfClock_restart(GET_CLOCK(engine));
         return res_pause;
     }
     return 0;
@@ -79,6 +80,7 @@ int pause_game(void)
         }
         sfMusic_play(GET_ASSET_AMBIANCE(engine));
         sfRenderWindow_setMouseCursorVisible(GET_WINDOW(engine), sfFalse);
+        sfClock_restart(GET_CLOCK(engine));
     }
     return 0;
 }
