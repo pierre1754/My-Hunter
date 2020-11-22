@@ -45,12 +45,17 @@ void set_sprite_planes(void)
 void set_new_plane(void)
 {
     engine_t *engine = get_engine();
+    poland_invasion_t *poland = create_poland();
     plane_t *plane;
     int rand_nbr = rand() % 100;
     static float time_needed = 0;
+    static float time_inv = 0.4;
 
     time_needed += GET_ELAPSED(engine);
-    if (time_needed < 0.5)
+
+    if (poland->bool)
+        time_inv = 0.01;
+    if (time_needed < time_inv)
         return;
     time_needed = 0;
     if (rand_nbr > 25)

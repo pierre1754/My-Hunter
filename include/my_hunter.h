@@ -38,9 +38,14 @@ typedef struct {
     time_elapsed_t *time;
 } engine_t;
 
-int flag(int ac, char **av);
+typedef struct {
+    char bool;
+} poland_invasion_t;
+
+int flag(char **av);
 
 engine_t *get_engine(void);
+poland_invasion_t *create_poland(void);
 
 void create_time();
 void create_engine(void);

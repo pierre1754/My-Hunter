@@ -17,6 +17,7 @@ SRC =	flags.c									\
 		src/destroy_plane.c						\
 		src/set_explosion.c						\
 		src/set_element/set_asset.c				\
+		src/set_element/set_poland.c			\
 		src/set_element/set_engine.c			\
 		src/set_element/set_environement.c		\
 		src/set_element/set_object.c			\
