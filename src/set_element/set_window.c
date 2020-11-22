@@ -14,9 +14,10 @@ void create_window(void)
 
     engine->window = malloc(sizeof(window_t));
     GET_WINDOW(engine) = sfRenderWindow_create(mode,
-                                                "My Hunter",
-                                                sfFullscreen,
-                                                NULL);
+                                            "My Hunter",
+                                            sfVideoMode_isValid(mode) ?
+                                            sfFullscreen : sfClose,
+                                            NULL);
     sfRenderWindow_setVerticalSyncEnabled(GET_WINDOW(engine), sfTrue);
     GET_WINDOW_SIZE(engine) = (sfVector2f) {mode.width, mode.height};
 }
