@@ -11,7 +11,7 @@ int flag(char **av)
 {
     if (av[1][0] != '-' || av[1][1] != 'h')
         return 84;
-    write(0, "USAGES\n   ./my_hunter ... -p\n\n", 23);
+    write(0, "USAGES\n   ./my_hunter ... -p\n\n", 30);
     write(0, "DECRIPTION\n   A duck hunt game, but better.\n", 44);
     write(0, "   Press any key to pause the game.\n", 36);
     write(0, "   And click on QUIT button to leave the game.\n", 47);

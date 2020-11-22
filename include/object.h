@@ -45,10 +45,12 @@
 
 #define GET_OBJ_LISTHEAD(engine) (&engine->object->planes)
 
+#ifndef LIST_FOREACH_SAFE
 #define LIST_FOREACH_SAFE(var, head, field, tvar)                       \
         for ((var) = LIST_FIRST((head));                                \
             (var) && ((tvar) = LIST_NEXT((var), field), 1);             \
             (var) = (tvar))
+#endif
 
 #define GET_EXP(engine) (engine->object->explosion)
 #define GET_EXP_IMG(engine) (engine->object->explosion->exp_img)
