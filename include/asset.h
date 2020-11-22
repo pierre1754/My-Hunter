@@ -8,17 +8,24 @@
 #ifndef ASSET_H
 #define ASSET_H
 
-#define GET_ASSET_AMBIANCE(engine) (engine->asset->ambiance)
+#define GET_ASSET_AMBIANCE(engine) \
+(engine->asset->ambiance)
 
-#define GET_ASSET_TEXTURE(engine, x) (engine->asset->texture_array[x])
+#define GET_ASSET_TEXTURE(engine, x) \
+(engine->asset->texture_array[x])
 
-#define GET_ASSET_SOUND(engine, x) (engine->asset->sound_array[x])
+#define GET_ASSET_SOUND(engine, x) \
+(engine->asset->sound_array[x])
 
-#define GET_ASSET_TEXTURE_CASE(engine, x) (engine->asset->texture_array[x]->plane_texture)
-#define GET_ASSET_TEXTURE_RECT(engine, x) (engine->asset->texture_array[x]->rectangle_texture)
+#define GET_ASSET_TEXTURE_CASE(engine, x) \
+(engine->asset->texture_array[x]->plane_texture)
+#define GET_ASSET_TEXTURE_RECT(engine, x) \
+(engine->asset->texture_array[x]->rectangle_texture)
 
-#define GET_ASSET_SOUND_BUFFER(engine, x) (engine->asset->sound_array[x]->buffer_sound)
-#define GET_ASSET_SOUND_VAR(engine, x) (engine->asset->sound_array[x]->various_sound)
+#define GET_ASSET_SOUND_BUFFER(engine, x) \
+(engine->asset->sound_array[x]->buffer_sound)
+#define GET_ASSET_SOUND_VAR(engine, x) \
+(engine->asset->sound_array[x]->various_sound)
 
 typedef enum {
     imagePlane_1,

@@ -17,8 +17,12 @@
 #define GET_CLOCK(engine) (engine->time->clock)
 #define GET_ELAPSED(engine) (engine->time->time_elapsed)
 
-#define CHECK_POS_X(engine, plane) (GET_MOUSE_POS(engine).x >= plane->position.x && GET_MOUSE_POS(engine).x <= plane->position.x + 232)
-#define CHECK_POS_Y(engine, plane) (GET_MOUSE_POS(engine).y >= plane->position.y && GET_MOUSE_POS(engine).y <= plane->position.y + 102)
+#define CHECK_POS_X(engine, plane) \
+(GET_MOUSE_POS(engine).x >= plane->position.x && \
+GET_MOUSE_POS(engine).x <= plane->position.x + 232)
+#define CHECK_POS_Y(engine, plane) \
+(GET_MOUSE_POS(engine).y >= plane->position.y && \
+GET_MOUSE_POS(engine).y <= plane->position.y + 102)
 
 typedef struct {
     char help;
